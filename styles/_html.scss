@@ -1,0 +1,15 @@
+@use './mixins' as *;
+@use "sass:math";
+
+*, *::after, *::before{  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body {
+  background: $white;
+}
+
+

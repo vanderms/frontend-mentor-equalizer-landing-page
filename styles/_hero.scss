@@ -1,0 +1,26 @@
+@use './mixins' as *;
+
+.hero-section{
+  @include container;  
+
+  .logo{
+    margin-top: rem(62);
+  }
+
+
+  .details {
+    @include size(rem(384), rem(384));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;   
+    position: absolute; 
+    &.details-1{
+      background-image: url(path('/assets/details-1.svg'));
+      top: -#{rem(146)};
+      left: -#{rem(112)};
+    }
+  }
+
+  
+
+}

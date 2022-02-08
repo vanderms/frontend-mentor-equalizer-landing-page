@@ -1,0 +1,49 @@
+@use 'sass:map';
+
+@function path($src) {
+  @return '/frontend-mentor-equalizer-landing-page' + $src;
+}
+
+@function rem($px) {
+  $html-font-size: 16;
+  @return #{$px / $html-font-size}rem;
+}
+
+$breakpoints: (
+  small-mobile: rem(350),
+  mobile: rem(700),
+  tablet: rem(1160),
+  laptop: rem(1440),
+);
+
+@mixin media($size) {
+  $breakpoint: map.get($breakpoints, $size);
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin media-only-tablet() {
+  $md: map.get($breakpoints, mobile);
+  $lg: map.get($breakpoints, tablet);
+  @media screen and (min-width: calc($md + 1px)) and (max-width: $lg) {
+    @content;
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin container() {
+  padding-right: calc(50vw - rem(555));
+  padding-left: calc(50vw - rem(555));
+}
+
+//colors
+$blue: #66e2dc;
+$orange: #fa7453;
+$gold: #ffb964;
+$white: #fcfaf9;
+$black: #191826;
