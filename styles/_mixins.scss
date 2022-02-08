@@ -1,4 +1,5 @@
 @use 'sass:map';
+@use 'sass:math';
 
 @function path($src) {
   @return '/frontend-mentor-equalizer-landing-page' + $src;
@@ -6,13 +7,13 @@
 
 @function rem($px) {
   $html-font-size: 16;
-  @return #{$px / $html-font-size}rem;
+  @return #{math.div($px, $html-font-size)}rem;
 }
 
 $breakpoints: (
   small-mobile: rem(350),
   mobile: rem(700),
-  tablet: rem(1160),
+  tablet: rem(1200),
   laptop: rem(1440),
 );
 
@@ -36,9 +37,16 @@ $breakpoints: (
   height: $height;
 }
 
+$desktop-container-width: rem(1110);
+$tablet-container-width: rem(690);
+
 @mixin container() {
-  padding-right: calc(50vw - rem(555));
-  padding-left: calc(50vw - rem(555));
+ width: $desktop-container-width;
+ margin: auto;
+
+ @include media(tablet){
+   width: $tablet-container-width;
+ }
 }
 
 //colors
