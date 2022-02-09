@@ -1,0 +1,70 @@
+@use './mixins' as *;
+@use 'sass:math';
+
+.footer-root{
+  margin-top: rem(87);
+  margin-bottom: rem(91);
+  @include container;  
+  height: rem(80);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include media(tablet){
+    align-items: flex-end;
+    height: rem(143);
+  }
+
+  @include media(mobile){
+    flex-direction: column;
+    gap: rem(64);
+    height: auto;
+    align-items: flex-start;
+    justify-content: unset;
+  }
+
+
+  .column-right{
+    display: flex;
+    height: 100%;
+    align-items: flex-start;
+    gap: rem(137);
+
+    @include media(tablet){
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 0;
+    }    
+
+    @include media(mobile){
+      gap: rem(32);
+    }
+
+    .text{
+      width: rem(366);
+      font-size: rem(16);
+      line-height: math.div(26, 16);
+
+      @include media(mobile){
+        width: 100%;
+      }
+    }
+  }
+
+  .social-links{
+    display: flex;
+    gap: rem(20);
+
+    @include media(tablet){
+      margin-bottom: rem(29);
+    }
+    
+    svg{
+      cursor: pointer;
+    }
+
+    svg:hover path{
+      fill: $orange;
+    }
+  }
+}
