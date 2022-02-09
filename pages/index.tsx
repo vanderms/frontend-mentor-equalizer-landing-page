@@ -1,7 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import path from '../lib/path';
-import Hero from '../components/sections/hero';
+import Hero from '../components/hero';
+import Pricing from '../components/pricing';
 
 
 const Home: NextPage = () => {
@@ -13,6 +14,7 @@ const Home: NextPage = () => {
       </Head>
       <main>       
         <Hero/>
+        <Pricing/>
       </main>
        
      

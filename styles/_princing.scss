@@ -1,0 +1,118 @@
+@use './mixins' as *;
+@use 'sass:math';
+
+.pricing-section-root {
+  @include container;
+  margin-top: rem(108);
+
+  .illustration {
+    @include size(rem(312), auto);
+    margin-left: rem(102);
+  }
+
+  .background {
+    @include size(100%, rem(600));
+    background-color: $black;
+    margin-top: rem(-429);
+    position: relative;
+    z-index: -1;
+    border-radius: rem(12);
+
+    .pattern {
+      margin-top: rem(-40);
+      margin-left: rem(336);
+    }
+  }  
+
+  .bg-detail{
+    @include size(rem(357), rem(384));
+    position: absolute;
+    background-image: url(path('/assets/circle-4.svg'));
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: cover;
+    z-index: -2;
+    right: 0;
+    margin-top: rem(-313);
+  }
+
+}
+
+.pricing-section-root .card {
+  margin-top: rem(-510);
+  margin-left: rem(569);
+  @include size(rem(446), rem(625));
+  background-color: $orange;
+  border-radius: rem(12);
+  padding: rem(58) rem(59) 0 rem(54);
+
+  *,
+  *::after,
+  *::before {
+    color: $white;
+  }
+
+  .title {
+    font-size: rem(40);
+    line-height: math.div(52, 40);
+    font-weight: 700;
+  }
+
+  .description {
+    margin-top: rem(22);
+    font-size: rem(20);
+    line-height: math.div(34, 20);
+    font-weight: 400;
+  }
+
+  .price {
+    margin-top: rem(39);
+    height: rem(52);
+    display: flex;
+    align-items: center;      
+
+    span {
+      font-size: rem(20);
+      line-height: math.div(32, 20);
+      margin-left: rem(8);
+    }
+
+    strong {
+      font-size: rem(65);
+      font-size: 700;
+      line-height: math.div(52, 65);
+    }
+  }
+
+  .cta{
+    @include size(100%, rem(61));
+    border: none;
+    border-radius: rem(12);     
+    
+    letter-spacing: -0.18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+      margin-right: rem(8);        
+    }
+
+    span{
+      font-size: rem(18);
+      font-weight: 700;
+    }
+
+    &.apple{
+      margin-top: rem(46);
+      background-color: $black;        
+    }
+
+    &.android{
+      margin-top: rem(16);
+      span{
+        color: $black;
+      }
+    }
+  }
+}

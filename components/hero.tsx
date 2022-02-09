@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import path from '../../lib/path';
+import path from '../lib/path';
 
 export default function Hero() {
   return (
