@@ -151,7 +151,7 @@
     @include size(100%, rem(61));
     border: none;
     border-radius: rem(12);
-
+    cursor: pointer;
     letter-spacing: -0.18px;
     display: flex;
     align-items: center;
@@ -172,12 +172,19 @@
       @include media(tablet) {
         margin-top: rem(39);
       }
+
+      &:hover{
+        background-color: $blue;
+      }
     }
 
     &.android {
       margin-top: rem(16);
       span {
         color: $black;
+      }
+      &:hover{
+        background-color: $gold;
       }
     }
   }
