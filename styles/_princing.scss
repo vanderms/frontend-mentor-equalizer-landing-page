@@ -8,6 +8,16 @@
   .illustration {
     @include size(rem(312), auto);
     margin-left: rem(102);
+
+    @include media(tablet) {
+      width: rem(270);
+      margin-left: rem(64);
+    }
+
+    @include media(mobile) {
+      width: rem(208);
+      margin-left: calc(50% - rem(104));
+    }
   }
 
   .background {
@@ -18,13 +28,33 @@
     z-index: -1;
     border-radius: rem(12);
 
+    @include media(tablet) {
+      margin-top: rem(-374);
+    }
+
+    @include media(mobile) {
+      margin-top: rem(-332);
+    }
+
     .pattern {
       margin-top: rem(-40);
       margin-left: rem(336);
-    }
-  }  
 
-  .bg-detail{
+      @include media(tablet) {
+        @include size(280, auto);
+        margin-top: rem(-31);
+        margin-left: rem(229);
+      }
+
+      @include media(tablet) {
+        margin-left: calc(50% - rem(140));
+        max-width: 100%;
+        margin-top: 0;
+      }
+    }
+  }
+
+  .bg-detail {
     @include size(rem(357), rem(384));
     position: absolute;
     background-image: url(path('/assets/circle-4.svg'));
@@ -34,8 +64,11 @@
     z-index: -2;
     right: 0;
     margin-top: rem(-313);
-  }
 
+    @include media(tablet) {
+      display: none;
+    }
+  }
 }
 
 .pricing-section-root .card {
@@ -45,6 +78,22 @@
   background-color: $orange;
   border-radius: rem(12);
   padding: rem(58) rem(59) 0 rem(54);
+
+  @include media(tablet) {
+    @include size(rem(399), rem(546));
+    padding: rem(48) rem(48) 0 rem(48);
+    margin-top: rem(-450);
+    margin-left: calc(100% - rem(399) - rem(58));
+    position: relative;
+    z-index: 2;
+  }
+
+  @include media(mobile) {
+    @include size(100%, auto);
+    padding: rem(48) rem(36);
+    margin-left: 0;
+    margin-top: rem(-220);
+  }
 
   *,
   *::after,
@@ -56,6 +105,10 @@
     font-size: rem(40);
     line-height: math.div(52, 40);
     font-weight: 700;
+    @include media(tablet) {
+      font-size: rem(32);
+      line-height: math.div(40, 32);
+    }
   }
 
   .description {
@@ -63,13 +116,23 @@
     font-size: rem(20);
     line-height: math.div(34, 20);
     font-weight: 400;
+
+    @include media(tablet) {
+      margin-top: rem(12);
+      font-size: rem(18);
+      line-height: math.div(28, 18);
+    }
   }
 
   .price {
     margin-top: rem(39);
     height: rem(52);
     display: flex;
-    align-items: center;      
+    align-items: center;
+
+    @include media(tablet) {
+      margin-top: rem(36);
+    }
 
     span {
       font-size: rem(20);
@@ -84,33 +147,36 @@
     }
   }
 
-  .cta{
+  .cta {
     @include size(100%, rem(61));
     border: none;
-    border-radius: rem(12);     
-    
+    border-radius: rem(12);
+
     letter-spacing: -0.18px;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    img{
-      margin-right: rem(8);        
+    img {
+      margin-right: rem(8);
     }
 
-    span{
+    span {
       font-size: rem(18);
       font-weight: 700;
     }
 
-    &.apple{
+    &.apple {
       margin-top: rem(46);
-      background-color: $black;        
+      background-color: $black;
+      @include media(tablet) {
+        margin-top: rem(39);
+      }
     }
 
-    &.android{
+    &.android {
       margin-top: rem(16);
-      span{
+      span {
         color: $black;
       }
     }

@@ -18,8 +18,7 @@ export default function Pricing() {
         />
       </div>
       <Card/>
-      <div className="bg-detail"></div>
-      
+      <div className="bg-detail"></div>      
     </div>
   );
 }
