@@ -39,6 +39,7 @@ $breakpoints: (
 
 $desktop-container-width: rem(1110);
 $tablet-container-width: rem(690);
+$mobile-container-width: 87.2%;
 
 @mixin container() {
  width: $desktop-container-width;
@@ -46,6 +47,10 @@ $tablet-container-width: rem(690);
 
  @include media(tablet){
    width: $tablet-container-width;
+ }
+
+ @include media(tablet){
+   width: $mobile-container-width;
  }
 }
 
