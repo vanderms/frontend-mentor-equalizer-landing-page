@@ -3,7 +3,7 @@ import path from '../../lib/path';
 
 export default function Hero() {
   return (
-    <section className="hero-section">
+    <section className="hero-section-root">
       <div className="background-images">
         <div className="circle"></div>
         <div className="circle"></div>

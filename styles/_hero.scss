@@ -1,9 +1,9 @@
 @use './mixins' as *;
 @use 'sass:math';
 
-.hero-section {
+.hero-section-root {
   @include container;
-
+ 
   .logo {
     margin-top: rem(62);
 
@@ -12,6 +12,7 @@
     }
   }
 
+ 
   .background-images .circle {
     @include size(rem(384), rem(384));
     background-position: center;
@@ -42,9 +43,10 @@
         right: rem(39);
       }
       @include media(mobile){
-        @include size(rem(281), rem(281)); 
+        @include size(rem(216), rem(281)); 
         top: -#{rem(104)};
-        right: -#{rem(65)};
+        right: 0;
+        background-position: left center;
       }
 
     }
@@ -58,9 +60,10 @@
         right: rem(39);
       }
       @include media(mobile){
-        @include size(rem(281), rem(281));        
+        @include size(rem(216), rem(281));        
         top: rem(94);
-        right: -#{rem(65)};
+        right: 0;
+        background-position: left center;
       }
     }
   }
